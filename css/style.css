@@ -1,0 +1,29 @@
+.splash {
+	position: relative;
+	height: 500px;
+	background-image: url('../img/splash.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#contact {
+	border-bottom: none;
+}
+
+.teaching .date {
+	font-weight: bold;
+	color: #000;
+	margin-top: 21px;
+}
+
+.teaching p {
+	margin: 0;
+}
+
+@media (max-width: 767px){
+
+	.splash {
+		max-height: 300px;
+	}
+
+}

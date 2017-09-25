@@ -1,0 +1,97 @@
+ul.graphic {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+@media screen and (max-device-width: 320px) {
+
+	div.splash {
+		background-image: url('../img/splash_small.jpg');
+	}
+}
+
+ul.graphic li {
+	margin-right: 2px;
+	margin-bottom:2px;
+	padding-bottom:1px;
+}
+
+ul.graphic li a,
+ul.graphic li a.sm2_link {
+	/* assume all items will be sounds rather than wait for onload etc. in this example.. may differ for your uses. */
+	display: inline-block;
+	padding-left: 22px;
+	min-height:16px;
+	vertical-align: middle;
+	background-color: #555;
+	background-color: rgba(0, 0, 0, 0.65);
+	border-radius:3px;
+	padding: 3px 3px 3px 25px;
+	min-width:20em;
+	_width: 20em; /* IE 6 */
+	font-size: 12px;
+	text-decoration:none;
+	font-weight:normal;
+	color:#f6f9ff;
+}
+
+ul.graphic li a.sm2_link {
+	/* safari 3.1+ fun (or, proprietary crap. TBD.) */
+	-webkit-transition-property: hover;
+	-webkit-transition: background-color 0.15s linear;
+	-moz-transition: background-color 0.15s linear 0s; /* firefox 4 */
+	-o-transition-property: background-color; /* opera 10.5 */
+	-o-transition-duration: 0.15s;
+}
+
+ul.graphic li a, /* use a.sm2_link {} if you want play icons showing only if SM2 is supported */
+ul.graphic li a.sm2_paused:hover,
+ul.graphic li a.sm2_link:hover {
+	background-image: url(../img/icon_play.png);
+	background-position: 3px 50%;
+	background-repeat: no-repeat;
+	_background-image: url(../img/icon_play.gif); /* IE 6 */
+}
+
+ul.graphic li a.sm2_link:hover {
+	/* default hover color, if you'd like.. */
+	background-color: #000;
+	color:#fff;
+}
+
+ul.graphic li a.sm2_paused {
+	background-color: #000;
+}
+
+ul.graphic li a.sm2_paused:hover {
+	background: #000 url(../img/icon_play.png) no-repeat 3px 50%;
+	_background-image:url(../img/icon_play.gif);
+}
+
+ul.graphic li a.sm2_playing,
+ul.graphic li a.sm2_playing:hover {
+	background: #000 url(../img/icon_pause.png) no-repeat 3px 50%;
+	_background-image: url(../img/icon_pause.gif);
+	text-decoration:none;
+}
+
+/* hide button while playing?
+ul.graphic li a.sm2_playing {
+background-image:none;
+}
+*/
+
+body #sm2-container object,
+body #sm2-container embed {
+/*
+flashblock handling: hide SWF off-screen by default (until blocked timeout case.)
+include body prefix to ensure override of flashblock.css.
+*/
+
+left:-9999em;
+top:-9999em;
+}
